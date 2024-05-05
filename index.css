@@ -1,0 +1,12 @@
+.output {
+  background-color: azure;
+  border: 1px solid black;
+  width: 600px;
+  height: 30px;
+  line-height: 30px;
+}
+
+#quantity,
+#update-quantity {
+  width: 50px;
+}

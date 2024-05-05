@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Pixela</title>
+  </head>
+  <body>
+    <h1>Pixela Demo</h1>
+    <a href="https://pixe.la/index.html" target="_blank">Pixela Homepage</a>
+    <p>
+      Pixela is the API service. With this service, you can get a GitHub like graph that expresses the degree of your daily various activities on a basis with a
+      vivid gradation. All operations are performed by API. And, it's free.
+    </p>
+    <h2>Working time development</h2>
+
+    <div>
+      <object
+        type="text/html"
+        data="https://pixe.la/v1/users/guen/graphs/graph2"
+        width="800px"
+        height="200px"
+        style="overflow: auto; border: 5px ridge blue"></object>
+    </div>
+
+    <h2>Select Date</h2>
+    <input type="date" name="pixeldate" id="date" />
+    <div>
+      <h2>Create a new Pixel</h2>
+      <p>Insert Quantity in hour, for Example: 4.5 (float)</p>
+      <input type="text" id="quantity" />
+      <button class="create-pixel">Create Pixel</button>
+    </div>
+
+    <div>
+      <h2>Read a Pixel</h2>
+      <button class="read-pixel">Read Pixel</button>
+      <div class="output"></div>
+    </div>
+
+    <div>
+      <h2>Update a Pixel</h2>
+      <p>Insert Quantity in hour</p>
+      <input type="text" id="update-quantity" />
+      <button class="update-pixel">Update Pixel</button>
+    </div>
+
+    <div>
+      <h2>Delete a Pixel</h2>
+      <button class="delete-pixel">Delete Pixel</button>
+    </div>
+
+    <script src="pixelaAPI.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
