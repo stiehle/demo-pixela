@@ -6,26 +6,27 @@ const outputbuttonEl = document.querySelector(".output");
 const deleteButtonEl = document.querySelector(".delete-pixel");
 const updateButtonEl = document.querySelector(".update-pixel");
 const updateQuantityEl = document.getElementById("update-quantity");
+const graphsEl = document.querySelector(".pixela-graphs");
 
 createPixelButtonEl.addEventListener("click", createNewPixel);
 readPixelButtonEl.addEventListener("click", readPixel);
 deleteButtonEl.addEventListener("click", deletePixel);
 updateButtonEl.addEventListener("click", updatePixel);
 
+showGraphs();
+
 function createNewPixel() {
   console.log("create new Pixel");
   console.log(quantityEl);
 
   if (quantityEl.value) {
-    console.log("todo");
-
     newPixel = {
-      date: `${getSelectedDate()}`,
-      quantity: `${quantityEl.value}`,
+      date: getSelectedDate(),
+      quantity: quantityEl.value,
       optionalData: '{"language": "javascript"}',
     };
     console.log(newPixel);
-    postPixelAPI(newPixel);
+    postPixel(newPixel);
   } else {
     alert("Please insert quantity");
   }
@@ -38,6 +39,7 @@ function getSelectedDate() {
     alert("Please select a date");
     return;
   }
+  // Date 2024-05-03 --> 20240503
   const changedDate = selectetDate.replaceAll(/-/g, "");
 
   console.log(selectetDate, changedDate);
@@ -49,7 +51,7 @@ async function readPixel() {
   console.log(date);
 
   if (date !== undefined) {
-    const body = await getPixelAPI(date);
+    const body = await getPixel(date);
     outputbuttonEl.innerHTML = `quantity: ${body.quantity},  optionalData: ${body.optionalData}`;
   }
 }
@@ -61,11 +63,11 @@ function updatePixel() {
 
   if (date !== undefined && updateQuantity !== "") {
     newData = {
-      date: `${date}`,
-      quantity: `${updateQuantity}`,
+      date: date,
+      quantity: updateQuantity,
       optionalData: '{"language": "javascript"}',
     };
-    updatePixelAPI(date, newData);
+    updatePixelofDate(date, newData);
   } else {
     if (!updateQuantity) alert("Please insert Quantity");
   }
@@ -76,10 +78,17 @@ function deletePixel() {
   console.log(date);
 
   if (date !== undefined) {
-    deletePixelAPI(date);
+    deletePixel(date);
   }
 }
 
-function reload() {
-  location.reload();
+function showGraphs() {
+  const html = `
+  <object
+        type="text/html"
+        data="https://pixe.la/v1/users/guen/graphs/graph2"        
+  </object>
+  `;
+
+  graphsEl.innerHTML = html;
 }

@@ -10,3 +10,9 @@
 #update-quantity {
   width: 50px;
 }
+
+.pixela-graphs {
+  background-color: azure;
+  width: 95%;
+  margin: 0 auto;
+}
