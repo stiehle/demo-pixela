@@ -1,7 +1,7 @@
 .output {
   background-color: azure;
   border: 1px solid black;
-  width: 600px;
+  width: 500px;
   height: 30px;
   line-height: 30px;
 }
@@ -13,6 +13,5 @@
 
 .pixela-graphs {
   background-color: azure;
-  width: 95%;
-  margin: 0 auto;
+  max-width: 1000px;
 }
