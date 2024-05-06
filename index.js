@@ -78,7 +78,7 @@ function deletePixel() {
   console.log(date);
 
   if (date !== undefined) {
-    deletePixel(date);
+    deleteOnePixel(date);
   }
 }
 

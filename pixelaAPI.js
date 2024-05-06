@@ -47,7 +47,7 @@ async function updatePixelofDate(pixelDate, newData) {
 }
 
 // https://pixe.la/v1/users/guen/graphs/graph2/20240503
-async function deletePixel(pixelDate) {
+async function deleteOnePixel(pixelDate) {
   console.log(`${PIXELA_ENDPOINT_URL}/${pixelDate}`);
 
   const response = await fetch(`${PIXELA_ENDPOINT_URL}/${pixelDate}`, {
